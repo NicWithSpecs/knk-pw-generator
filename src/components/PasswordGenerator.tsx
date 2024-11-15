@@ -41,6 +41,15 @@ const PasswordGenerator = () => {
       return;
     }
 
+    // if length is 0, abort
+    if (length < 1) {
+      toaster.create({
+        description: "Password length can't be 0.",
+        type: "error",
+      });
+      return;
+    }
+
     const possibleChars: string =
       "" +
       (useLowercase ? lowercaseChars : "") +
