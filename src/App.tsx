@@ -1,7 +1,7 @@
-import { Heading } from "@chakra-ui/react";
+import PasswordGenerator from "./components/PasswordGenerator";
 
 function App() {
-  return <Heading>Password Generator</Heading>;
+  return <PasswordGenerator />;
 }
 
 export default App;
