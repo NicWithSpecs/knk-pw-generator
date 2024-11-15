@@ -82,7 +82,7 @@ const PasswordGenerator = () => {
 
   return (
     <>
-      <Box width={500} p={6} borderWidth={1} borderRadius={10}>
+      <Box width={500} p={6} borderWidth={1} borderRadius={10} bg="bg.subtle">
         <form onSubmit={handleSubmit}>
           <Flex justify="space-between" align="center">
             <Text textStyle="sm" fontWeight="semibold">
