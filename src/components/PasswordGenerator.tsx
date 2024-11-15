@@ -1,39 +1,40 @@
 import {
   Box,
   Button,
+  ClipboardRoot,
   Flex,
-  Heading,
   HStack,
-  Input,
   Separator,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { Slider } from "./ui/slider";
-import { Switch } from "./ui/switch";
+import { Checkbox } from "./ui/checkbox";
+import { PasswordInput } from "./ui/password-input";
+import { ClipboardIconButton } from "./ui/clipboard";
 
 const PasswordGenerator = () => {
   return (
     <Box width={600} p={4} borderWidth={1} borderRadius={10}>
-      <Heading>Password Generator</Heading>
-      <HStack>
+      <Flex justify="space-between">
         <Text>Password Length</Text>
         <Text>25</Text>
-      </HStack>
-      <Slider defaultValue={[20]} max={30} />
-      <Flex gap={2} direction="column">
-        <Switch colorPalette="blue">Lowercase</Switch>
-        <Switch>Uppercase</Switch>
-        <Switch>Numbers</Switch>
-        <Switch>Special Characters</Switch>
+      </Flex>
+      <Slider defaultValue={[25]} max={40} mb={1} />
+      <Flex gapX={10} wrap="wrap">
+        <Checkbox>a-z</Checkbox>
+        <Checkbox>A-Z</Checkbox>
+        <Checkbox>!@#</Checkbox>
+        <Checkbox>0-9</Checkbox>
       </Flex>
       <Stack>
         <Separator my={4} />
         <Button>Generate</Button>
         <HStack>
-          <Input />
-          <Button>Hide</Button>
-          <Button>Copy</Button>
+          <PasswordInput />
+          <ClipboardRoot value="test" timeout={1000}>
+            <ClipboardIconButton />
+          </ClipboardRoot>
         </HStack>
       </Stack>
     </Box>
