@@ -34,7 +34,10 @@ const PasswordGenerator = () => {
 
     // if no checkbox is ticked, abort
     if (!useLowercase && !useUppercase && !useNumbers && !useSpecialChars) {
-      alert("At least one password generation type must be selected.");
+      toaster.create({
+        description: "At least one password generation type must be selected.",
+        type: "error",
+      });
       return;
     }
 
