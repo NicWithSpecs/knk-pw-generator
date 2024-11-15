@@ -17,3 +17,4 @@ A simple and easy to use password generator tool. The user is able to setup some
 
 - React
 - TypeScript
+- ChakraUI
